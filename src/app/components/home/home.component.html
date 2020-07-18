@@ -1,15 +1,22 @@
 <div class="container-fluid" style="background-color: #48b9e6; height: 100vh;">
 <div class="row" style="text-align: center;" >
-    <div style="margin-top: 5vh;" class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-10 offset-xs-1 "> 
-        <mat-card  [@BounceandShadow]="cardState" style="height: 100%;text-align: center;">
-         <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
-            <span [@cardAnimation]="cardMovement" style="margin-top: 4vh;">
+    <div style="margin-top: 5vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-8 offset-xs-2 col-10 offset-1 "> 
+        <mat-card  [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="height: 100%;text-align: center;" *ngIf="showMainCard">
+            <div style="display: flex;flex-direction: row-reverse;">
+            <button mat-icon-button style="color:black;outline: none;background-color: transparent;border: none;"
+            (click)="closeMainCard()"
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
+            </div>
+            <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
+            <span  class="avatarHover"  style="margin-top: 2vh;">
                 <ngx-avatar  [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
             </span>
             <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
                 Sanjay Garg</p>
             <p style="margin-top: 3vh;">
-                <ngx-typed-js [strings]="['Frontend Engineer','MEAN Stack Dev','DSA Programmer','Problem Solver']" typeSpeed="9"  backSpeed= "9" backDelay="1500" startDelay="1000" loop="true">
+                <ngx-typed-js [strings]="['Frontend Engineer','MEAN Stack Dev','DSA Programmer','Problem Solving']" typeSpeed="9"  backSpeed= "9" backDelay="1500" startDelay="1500" loop="true">
                     <h1 class="typing" style="color: black;"></h1>
                 </ngx-typed-js> 
             </p>
@@ -24,6 +31,26 @@
                 <li style="margin-left: 2vw;"><a href="https://www.facebook.com/profile.php?id=100005597882484" target="_blank" class="fa fa-facebook"></a></li>
                 
             </ul>
+         </div>
+        </mat-card>
+        <mat-card [@skillCardAnimation]="skillCardState" class="overLaySkillCard"  style="height: 100%;text-align: center;" *ngIf="showSkillCard">
+            <div style="display: flex;flex-direction: row-reverse;">
+            <button mat-icon-button style="color:black;outline: none;background-color: transparent;border: none;"
+            (click)="openMainCard()"
+            >
+                <mat-icon>close</mat-icon>
+            </button>
+            </div>
+            <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
+            
+            <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
+                Skills</p>
+            
+            <!-- <p>
+                <mat-icon class="first" color="#ffc966" >location_on</mat-icon> 
+                    <span style="font-size: 22px;padding-top: 50px;"> Pune,India</span>
+            </p> -->
+           
          </div>
         </mat-card>
     </div>

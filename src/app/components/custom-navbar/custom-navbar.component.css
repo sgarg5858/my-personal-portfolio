@@ -45,8 +45,7 @@ ul.vertical li{
     transition-timing-function: linear;
 }
 ul.vertical li:hover{
-    transform: translateY(-5px);
-    
+    transform: translateY(-5px);  
 }
 ul.hoverColor li a:hover{
     color: grey;

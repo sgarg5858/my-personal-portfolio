@@ -14,7 +14,7 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
         'box-shadow':'0px 0px 50px rgba(0,0,0,0.17)',
         'opacity':1
       })),
-      transition('off => start',[
+      transition('off <=> start',[
         animate(5000,keyframes([
           style({
             'box-shadow':'0px 0px 5px rgba(0,0,0,0.17)',
@@ -45,17 +45,25 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
       ])
 
     ]),
-    
-    ,
     trigger('cardAnimation',[
       state('hide',style({
-        'transform':'rotate(-720deg)'
+        'transform':'translateY(-1000px)'
         
       })),
       state('show',style({
-        'transform':'rotate(0deg) '
+        'transform':'translateY(0px) '
       })),
-      transition('hide => show',animate(1000))
+      transition('hide <=> show',animate(800))
+    ]),
+    trigger('skillCardAnimation',[
+      state('hide',style({
+        'transform':'translateY(1000px)'
+        
+      })),
+      state('show',style({
+        'transform':'translateY(0px) '
+      })),
+      transition('hide <=> show',animate(800))
     ])
   ]
 })
@@ -64,13 +72,38 @@ export class HomeComponent implements OnInit {
   constructor() { }
   cardState="off";
   cardMovement="hide";
-  cardVisibilty="hide";
+  skillCardState='hide';
+  showMainCard=true;
+  showSkillCard=false;
+
   ngOnInit(): void {
     setTimeout(()=>{
       this.cardState="on";
       this.cardMovement="show";
-      this.cardVisibilty="show";
     },1)
   }
-
+  closeMainCard()
+  {
+    this.cardState="off";
+    this.cardMovement="hide";
+    setTimeout(()=>{
+      this.showMainCard=false;
+      this.showSkillCard=true;
+      setTimeout(()=>{
+        this.skillCardState='show';
+      },1)
+    },501);
+  }
+  openMainCard()
+  {
+    this.skillCardState='hide';
+    setTimeout(()=>{
+      this.showSkillCard=false;
+      this.showMainCard=true;
+      this.cardState="on";
+     setTimeout(()=>{
+      this.cardMovement="show";
+     },1)
+    },501);
+  }
 }

@@ -1,27 +1,47 @@
 mat-card{
     border-radius: 20px;
 }
-mat-icon.first{
-    color:#90EE90;
-    vertical-align: middle;
+
+mat-icon,mat-icon.matListIcon{
+  outline:none !important;
+
 }
 .fa {
-    padding: 14px;
+    padding: 11px;
     font-size: 30px;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
   }
   
+  .avatarHover {
+    transform: scale(1.0);
+    transition: transform 300ms;  
+    transition-timing-function: linear;
+  }
+  
+
+  .avatarHover:hover {
+    transform: scale(1.1);
+  }
+  
   /* Add a hover effect if you want */
+
+  .fa {
+    transform: scale(1.0);
+    transition: transform 300ms;  
+    transition-timing-function: linear;
+  }
+  
+
   .fa:hover {
     transform: scale(1.1);
   }
   
   .fa-facebook {
-    background: #3B5998;
+    background: #405DE6;
     color: white;
   }
   .fa-github {
@@ -33,7 +53,7 @@ mat-icon.first{
     color: white;
   }
   .fa-instagram {
-    background: #6dc993;
+    background: #F77737;
     color: white;
   }
   .fa-code {
@@ -41,3 +61,6 @@ mat-icon.first{
     color: white;
   }
   
+  .overLaySkillCard{
+    z-index: 5;
+  }
