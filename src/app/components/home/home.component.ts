@@ -11,7 +11,7 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
         'opacity':0.5
       })),
       state('on',style({
-        'box-shadow':'0px 0px 40px rgba(0,0,0,0.17)',
+        'box-shadow':'0px 0px 50px rgba(0,0,0,0.17)',
         'opacity':1
       })),
       transition('off => start',[
@@ -37,7 +37,7 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
             'offset':0.8
           }),
           style({
-            'box-shadow':'0px 0px 40px rgba(0,0,0,0.17)',
+            'box-shadow':'0px 0px 50px rgba(0,0,0,0.17)',
             'opacity':1.0,
             'offset':1
           })
@@ -45,13 +45,15 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
       ])
 
     ]),
+    
+    ,
     trigger('cardAnimation',[
       state('hide',style({
-        'transform':'translateX(-500px)'
+        'transform':'rotate(-720deg)'
         
       })),
       state('show',style({
-        'transform':'translateX(0px) '
+        'transform':'rotate(0deg) '
       })),
       transition('hide => show',animate(1000))
     ])
@@ -62,10 +64,12 @@ export class HomeComponent implements OnInit {
   constructor() { }
   cardState="off";
   cardMovement="hide";
+  cardVisibilty="hide";
   ngOnInit(): void {
     setTimeout(()=>{
-      this.cardState="on"
-      this.cardMovement="show"
+      this.cardState="on";
+      this.cardMovement="show";
+      this.cardVisibilty="show";
     },1)
   }
 

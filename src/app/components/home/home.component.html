@@ -1,18 +1,29 @@
 <div class="container-fluid" style="background-color: #48b9e6; height: 100vh;">
 <div class="row" style="text-align: center;" >
     <div style="margin-top: 5vh;" class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-10 offset-xs-1 "> 
-        <mat-card [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="height: 100%;text-align: center;">
+        <mat-card  [@BounceandShadow]="cardState" style="height: 100%;text-align: center;">
          <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
-            <span style="margin-top: 2vh;">
-                <ngx-avatar [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
+            <span [@cardAnimation]="cardMovement" style="margin-top: 4vh;">
+                <ngx-avatar  [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
             </span>
             <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
                 Sanjay Garg</p>
             <p style="margin-top: 3vh;">
-                <ngx-typed-js [strings]="['Frontend Engineer','MEAN Stack Dev','DSA Programmer','Problem Solver']" typeSpeed="9"  backSpeed= "9" backDelay="1500" startDelay="1500" loop="true">
+                <ngx-typed-js [strings]="['Frontend Engineer','MEAN Stack Dev','DSA Programmer','Problem Solver']" typeSpeed="9"  backSpeed= "9" backDelay="1500" startDelay="1000" loop="true">
                     <h1 class="typing" style="color: black;"></h1>
                 </ngx-typed-js> 
             </p>
+            <!-- <p>
+                <mat-icon class="first" color="#ffc966" >location_on</mat-icon> 
+                    <span style="font-size: 22px;padding-top: 50px;"> Pune,India</span>
+            </p> -->
+            <ul style="margin-top: 3vh;display: flex;flex-direction: row;list-style: none;align-content: space-between;padding-left: 0;">
+                <li><a href="https://www.linkedin.com/in/sanjay-garg-26bab6153/"  target="_blank" class="fa fa-linkedin"></a></li>
+                <li style="margin-left: 2vw;"><a href="https://github.com/sgarg5858" target="_blank" class="fa fa-github"></a></li>
+                <li style="margin-left: 2vw;"><a href="https://www.instagram.com/sanjaygarg98/" target="_blank" class="fa fa-instagram"></a></li>
+                <li style="margin-left: 2vw;"><a href="https://www.facebook.com/profile.php?id=100005597882484" target="_blank" class="fa fa-facebook"></a></li>
+                
+            </ul>
          </div>
         </mat-card>
     </div>
