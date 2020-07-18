@@ -1,0 +1,61 @@
+mat-sidenav-container,mat-sidenav{
+    height: 100%;
+}
+mat-sidenav{
+    width: 100vw;
+    background-color: #1e1e30 !important;
+    color: white;
+}
+
+.showMenu{
+    display: none;
+    }
+    .showList{
+        display: none;
+    }
+@media screen and (max-width:560px)
+{
+    .showMenu{
+        display: block;
+    }
+    .showList{
+        display: none;
+    }
+}
+@media screen and (min-width:561px)
+{
+    .showMenu{
+        display: none;
+    }
+    .showList{
+        display: block;
+    }
+}
+mat-icon,mat-icon.matListIcon{
+    outline:none !important;
+
+}
+mat-icon:hover{
+    color: grey;
+}
+ul.vertical li{
+    transform: translateY(0px); 
+    transition: transform 300ms;  
+    transition-timing-function: linear;
+}
+ul.vertical li:hover{
+    transform: translateY(-5px);
+    
+}
+ul.hoverColor li a:hover{
+    color: grey;
+}
+/* ul. li{
+    transform: translateY(0px); 
+    transition: transform 300ms;  
+    transition-timing-function: linear;
+}
+ul.vertical li:hover{
+    transform: translateY(-10px);
+    
+} */

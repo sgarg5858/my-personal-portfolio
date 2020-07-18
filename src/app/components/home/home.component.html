@@ -1,0 +1,20 @@
+<div class="container-fluid" style="background-color: #48b9e6; height: 100vh;">
+<div class="row" style="text-align: center;" >
+    <div style="margin-top: 5vh;" class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-10 offset-xs-1 "> 
+        <mat-card [@BounceandShadow]="cardState" style="height: 100%;text-align: center;">
+         <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
+            <span style="margin-top: 2vh;">
+                <ngx-avatar [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
+            </span>
+            <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
+                Sanjay Garg</p>
+            <p style="margin-top: 3vh;">
+                <ngx-typed-js [strings]="['Frontend Engineer','MEAN Stack Dev','DSA Programmer','Problem Solver']" typeSpeed="9"  backSpeed= "9" backDelay="1500" loop="true">
+                    <h1 class="typing" style="color: black;"></h1>
+                </ngx-typed-js> 
+            </p>
+         </div>
+        </mat-card>
+    </div>
+</div>
+</div>
