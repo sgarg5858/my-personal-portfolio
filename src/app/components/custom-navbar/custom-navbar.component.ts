@@ -16,7 +16,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
         'opacity':1
       })),
       transition('off => on',
-      animate(1200,keyframes([
+      animate(1000,keyframes([
           style({
             'transform':'translateY(-100px)',
           'opacity':0,

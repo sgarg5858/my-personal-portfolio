@@ -44,16 +44,28 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
         ]))
       ])
 
+    ]),
+    trigger('cardAnimation',[
+      state('hide',style({
+        'transform':'translateX(-500px)'
+        
+      })),
+      state('show',style({
+        'transform':'translateX(0px) '
+      })),
+      transition('hide => show',animate(1000))
     ])
   ]
 })
 export class HomeComponent implements OnInit {
 
   constructor() { }
-  cardState="off"
+  cardState="off";
+  cardMovement="hide";
   ngOnInit(): void {
     setTimeout(()=>{
       this.cardState="on"
+      this.cardMovement="show"
     },1)
   }
 

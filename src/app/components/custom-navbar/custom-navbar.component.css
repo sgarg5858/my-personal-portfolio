@@ -3,8 +3,9 @@ mat-sidenav-container,mat-sidenav{
 }
 mat-sidenav{
     width: 100vw;
-    background-color: #1e1e30 !important;
+    /* background-color: #1e1e30 !important; */
     color: white;
+    background-color: #ffc966 !important;
 }
 
 .showMenu{
