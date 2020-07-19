@@ -15,7 +15,7 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
         'opacity':1
       })),
       transition('off <=> start',[
-        animate(5000,keyframes([
+        animate(1000,keyframes([
           style({
             'box-shadow':'0px 0px 5px rgba(0,0,0,0.17)',
             'opacity':0.6,
@@ -63,7 +63,17 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
       state('show',style({
         'transform':'translateY(0px) '
       })),
-      transition('hide <=> show',animate(800))
+      transition('hide <=> show',animate(200))
+    ]),
+    trigger('rotateEmoji',[
+      state('off',style({
+        'transform':'rotate(-360deg)'
+        
+      })),
+      state('on',style({
+        'transform':'rotate(0) '
+      })),
+      transition('off  => on',animate(500))
     ])
   ]
 })
@@ -75,6 +85,7 @@ export class HomeComponent implements OnInit {
   skillCardState='hide';
   showMainCard=true;
   showSkillCard=false;
+  rotateEmoji="off";
 
   ngOnInit(): void {
     setTimeout(()=>{
@@ -84,26 +95,29 @@ export class HomeComponent implements OnInit {
   }
   closeMainCard()
   {
-    this.cardState="off";
-    this.cardMovement="hide";
+    // this.cardState="off";
+    // this.cardMovement="hide";
     setTimeout(()=>{
       this.showMainCard=false;
       this.showSkillCard=true;
       setTimeout(()=>{
         this.skillCardState='show';
       },1)
-    },501);
+    },10);
   }
   openMainCard()
   {
     this.skillCardState='hide';
+    this.rotateEmoji='off';
+    
     setTimeout(()=>{
       this.showSkillCard=false;
       this.showMainCard=true;
-      this.cardState="on";
+      // this.cardState="on";
      setTimeout(()=>{
-      this.cardMovement="show";
+      // this.cardMovement="show";
+      this.rotateEmoji='on';
      },1)
-    },501);
+    },100);
   }
 }

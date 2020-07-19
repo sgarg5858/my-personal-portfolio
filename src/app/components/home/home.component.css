@@ -1,6 +1,25 @@
 mat-card{
     border-radius: 20px;
 }
+mat-card.lessBorder{
+  border-radius: 5px;
+}
+mat-card.skillCardList{
+  border-radius: 5px;
+  box-shadow:2px 2px 10px grey !important;
+  margin-top: 1vh;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: sans-serif;
+  border-left: 5px solid #48b9e6;
+  transform: scale(1);
+  transition: transform 300ms;
+  transition-timing-function: linear;
+}
+mat-card.skillCardList:hover{
+  transform: scale(1.05);
+}
 
 mat-icon,mat-icon.matListIcon{
   outline:none !important;

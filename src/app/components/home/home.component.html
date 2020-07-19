@@ -1,16 +1,22 @@
-<div class="container-fluid" style="background-color: #48b9e6; height: 100vh;">
-<div class="row" style="text-align: center;" >
-    <div style="margin-top: 5vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-8 offset-xs-2 col-10 offset-1 "> 
-        <mat-card  [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="height: 100%;text-align: center;" *ngIf="showMainCard">
+<div class="container-fluid" style="background-color: #48b9e6; min-height: 100vh; margin-bottom: 2vh;">
+<div class="row" >
+    <div style="margin-top: 5vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-10 offset-sm-1 col-xs-8 offset-xs-2 col-10 offset-1 "> 
+        
+        
+        <mat-card   [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="height: 100%;text-align: center;" *ngIf="showMainCard">
             <div style="display: flex;flex-direction: row-reverse;">
-            <button mat-icon-button style="color:black;outline: none;background-color: transparent;border: none;"
+            <button 
+            matTooltip="Checkout Skills"
+            mat-icon-button 
+            style="color:black;outline: none;background-color: transparent;border: none;"
             (click)="closeMainCard()"
+            matTooltipPosition="right"
             >
-                <mat-icon>menu</mat-icon>
+                <mat-icon>code</mat-icon>
             </button>
             </div>
             <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
-            <span  class="avatarHover"  style="margin-top: 2vh;">
+            <span [@rotateEmoji]="rotateEmoji" class="avatarHover"  style="margin-top: 2vh;">
                 <ngx-avatar  [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
             </span>
             <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
@@ -33,24 +39,85 @@
             </ul>
          </div>
         </mat-card>
-        <mat-card [@skillCardAnimation]="skillCardState" class="overLaySkillCard"  style="height: 100%;text-align: center;" *ngIf="showSkillCard">
-            <div style="display: flex;flex-direction: row-reverse;">
-            <button mat-icon-button style="color:black;outline: none;background-color: transparent;border: none;"
+
+
+        <mat-card class="lessBorder" [@skillCardAnimation]="skillCardState"   style="margin-bottom: 2vh;height: 100%;" *ngIf="showSkillCard">
+            
+            <div style="display: flex;flex-direction: row;align-content: space-between;">
+            <span style="margin-top: 2vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
+                Skills</span>
+            <span style="width: 100%;text-align: end;">
+                <button 
+            mat-icon-button 
+            style="color:black;outline: none;background-color: transparent;border: none;"
             (click)="openMainCard()"
+            matTooltip="Go Back"
+            matTooltipPosition="right"
             >
-                <mat-icon>close</mat-icon>
+            <mat-icon>close</mat-icon>
             </button>
+            </span>
             </div>
-            <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
-            
-            <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
-                Skills</p>
-            
-            <!-- <p>
-                <mat-icon class="first" color="#ffc966" >location_on</mat-icon> 
-                    <span style="font-size: 22px;padding-top: 50px;"> Pune,India</span>
-            </p> -->
-           
+            <div style="margin-top: 3vh;display: flex;flex-direction: column;">
+                <div class="row">
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                            Angular 10
+                        </mat-card>  
+                    </div>  
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                            Redux 
+                        </mat-card> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                            Typescript
+                        </mat-card>  
+                    </div>  
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                            Node.js 
+                        </mat-card> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                           Java
+                        </mat-card>  
+                    </div>  
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                            Html5, CSS3
+                        </mat-card> 
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                            Bootstrap
+                        </mat-card> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                           Data Structures and Algorithms
+                        </mat-card>  
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-card class="skillCardList">
+                           Angular Animations and Service Workers
+                        </mat-card>  
+                    </div>  
+                </div>
+                
          </div>
         </mat-card>
     </div>

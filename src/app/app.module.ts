@@ -19,6 +19,7 @@ import {AvatarModule} from 'ngx-avatar';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {NgxTypedJsModule} from 'ngx-typed-js'
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import {NgxTypedJsModule} from 'ngx-typed-js'
     AvatarModule,
     HttpClientModule,
     MatCardModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
