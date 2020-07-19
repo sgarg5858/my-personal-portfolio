@@ -25,6 +25,9 @@ mat-icon,mat-icon.matListIcon{
   outline:none !important;
 
 }
+mat-icon.location{
+  color: dodgerblue;
+}
 .fa {
     padding: 11px;
     font-size: 30px;

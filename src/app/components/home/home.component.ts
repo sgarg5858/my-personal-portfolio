@@ -74,6 +74,15 @@ import { style, trigger, state, transition, animate, keyframes } from '@angular/
         'transform':'rotate(0) '
       })),
       transition('off  => on',animate(500))
+    ]),
+    trigger('skillsAnimation',[
+      state('off',style({
+        'opacity':0.3
+      })),
+      state('on',style({
+        'opacity':1
+      })),
+      transition('off => on',animate(5000))
     ])
   ]
 })
@@ -86,6 +95,7 @@ export class HomeComponent implements OnInit {
   showMainCard=true;
   showSkillCard=false;
   rotateEmoji="off";
+  skillsState="off";
 
   ngOnInit(): void {
     setTimeout(()=>{
@@ -101,7 +111,9 @@ export class HomeComponent implements OnInit {
       this.showMainCard=false;
       this.showSkillCard=true;
       setTimeout(()=>{
+        this.skillsState='on';
         this.skillCardState='show';
+        
       },1)
     },10);
   }
@@ -113,6 +125,7 @@ export class HomeComponent implements OnInit {
     setTimeout(()=>{
       this.showSkillCard=false;
       this.showMainCard=true;
+      this.skillsState='off';
       // this.cardState="on";
      setTimeout(()=>{
       // this.cardMovement="show";
