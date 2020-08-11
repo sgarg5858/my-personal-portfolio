@@ -1,6 +1,6 @@
 <div class="container-fluid" style="background-color:#48b9e6 ;">
     <div class="row" style="height:10vh;">
-      <div class="col-2" style="margin-top: 10px;">
+      <div class="col-2" style="margin-top: 1vh;">
        
         <ngx-avatar src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
             <!-- [@NavLinksHoverAnimation]="hoverAnimationState" (mouseover)="changeStateofLink()" (mouseout)="changeStateofLink()"       -->
@@ -11,11 +11,11 @@
                <a   style="text-decoration: none;color: #ffc966;" routerLink="/home">Home</a></li>
           <li>  <a  style="text-decoration: none;color: #ffc966;" routerLink="/projects">Projects</a></li>
            <li> <a  style="text-decoration: none;color: #ffc966;" routerLink="/blogs">Blogs</a></li>
-           <li> <a   style="text-decoration: none;color: #ffc966;" routerLink="/about">About</a></li>
-           <!-- <li> <a   style="text-decoration: none;" routerLink="/contact">Contact</a></li> -->
+           <!-- <li> <a   style="text-decoration: none;color: #ffc966;" routerLink="/about">About</a></li -->
+            <li> <a   style="text-decoration: none;color: #ffc966;" routerLink="/contact">Contact</a></li>
         </ul>
       </div>
-      <div  [@navbarLinksAnimation]="navbarItemsAnimationState"  class="col-2 offset-8 showMenu" style="margin-top: 3vh;" >
+      <div  [@navbarLinksAnimation]="navbarItemsAnimationState"  class="col-2 offset-8 showMenu" style="margin-top: 2vh;" >
         <button style="color:white;outline: none;background-color: transparent;border: none;" mat-icon-button (click)="toggleButton()" *ngIf="menu">
             <mat-icon >
               menu
@@ -36,7 +36,7 @@
            <li style="display: block;margin-top: 5vh;"> <a  style="color: white;text-decoration: none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/home">Home</a></li>
            <li style="display: block;margin-top: 5vh;">  <a style="color:white;text-decoration: none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;"  (click)="closeButton()" routerLink="/projects">Projects</a> </li>
            <li style="display: block;margin-top: 5vh;">  <a  style="color: white;text-decoration: none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/blogs">Blogs</a> </li>
-           <li style="display: block;margin-top: 5vh;">  <a  style=" color:white;text-decoration:  none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/about">About</a> </li>
+           <li style="display: block;margin-top: 5vh;">  <a  style=" color:white;text-decoration:  none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/contact">Contact</a> </li>
             <!-- <a mat-list-item (click)="closeButton()" routerLink="/contact">Contact</a> -->
         </ul>
       </div>

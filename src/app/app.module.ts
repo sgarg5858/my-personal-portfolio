@@ -20,6 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {NgxTypedJsModule} from 'ngx-typed-js'
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HttpClientModule,
     MatCardModule,
     NgxTypedJsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
