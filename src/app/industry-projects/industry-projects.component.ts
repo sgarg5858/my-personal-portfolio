@@ -21,7 +21,7 @@ export class IndustryProjectsComponent implements OnInit {
   }
   goNext()
   {
-    if(this.count<2)
+    if(this.count<4)
     {
       this.count++;
     }

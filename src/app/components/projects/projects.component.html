@@ -3,11 +3,11 @@
         <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12 ">
             <mat-card style="border-radius: 10px;display: flex;flex-direction: column;margin-top: 5vh;align-items: center;min-height: 80vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)" [style.overflow]="'auto'" [style.height.px]="'300'">
                 <mat-tab-group mat-align-tabs="center" style="width: 100%;">
-                    <mat-tab label="Projects">
+                    <mat-tab>
+                        <ng-template matTabLabel>
+                            <span matBadge="4" matBadgeOverlap="false">Projects</span>
+                        </ng-template>
                         <app-industry-projects></app-industry-projects>
-                    </mat-tab>
-                    <mat-tab label="Personal Projects">
-                        <app-personal-projects></app-personal-projects>
                     </mat-tab>
                     <mat-tab label="Blogs">
                         <app-blogs>

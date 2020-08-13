@@ -27,6 +27,7 @@ import { PersonalProjectsComponent } from './personal-projects/personal-projects
 import {BlogsComponent} from './blogs/blogs.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component'
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatFormFieldModule,
     MatButtonModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
