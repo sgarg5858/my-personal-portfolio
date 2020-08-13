@@ -9,10 +9,11 @@
                         </ng-template>
                         <app-industry-projects></app-industry-projects>
                     </mat-tab>
-                    <mat-tab label="Blogs">
-                        <app-blogs>
-
-                        </app-blogs>
+                    <mat-tab>
+                        <ng-template matTabLabel>
+                            <span matBadge="4" matBadgeOverlap="false">Blogs</span>
+                        </ng-template>
+                        <app-blogs></app-blogs>
                     </mat-tab>
                   </mat-tab-group>
             </mat-card>
