@@ -11,5 +11,20 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  count=1;
+  goBack()
+  {
+    if(this.count>1)
+    {
+      this.count--;
+    }
+  }
+  goNext()
+  {
+    if(this.count<2)
+    {
+      this.count++;
+    }
+  }
 
 }

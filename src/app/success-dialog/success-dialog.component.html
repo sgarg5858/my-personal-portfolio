@@ -1,1 +1,14 @@
-<p>success-dialog works!</p>
+<div style="margin-top: 5px;"  style="text-align: center;">
+    <p style="font-size: 16px;font-weight: 400;margin-top: 12px;"> Hi {{name}}, i have got your message. I'll get back to you as soon as possible.</p>
+
+<svg 
+class="checkmark" 
+xmlns="http://www.w3.org/2000/svg" 
+viewBox="0 0 52 52"><circle 
+class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+</svg>
+<button mat-icon-button (click)="onDismiss()" style="outline: none;">
+    <mat-icon>close</mat-icon>
+</button>
+</div>

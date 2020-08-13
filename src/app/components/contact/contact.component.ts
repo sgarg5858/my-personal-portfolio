@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { SuccessDialogComponent } from 'src/app/success-dialog/success-dialog.component';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,public dialog:MatDialog) { }
   contactForm:FormGroup;
   nameRequired=false;
   emailRequired=false;
@@ -43,7 +45,7 @@ export class ContactComponent implements OnInit {
       this.emailRequired=true;
        return;
     }
-    if(this.contactForm.value.message=='' || this.contactForm.value.message.length<10)
+    if(this.contactForm.value.message=='')
     {
       this.messageRequired=true;
        return;
@@ -56,10 +58,23 @@ export class ContactComponent implements OnInit {
       this.contactForm.reset();
       this.isLoading=false;
       this.isSent=true;
+      this.openDialog();
     },(error)=>{
       this.isLoading=false;
       this.isError=true;
     })
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(SuccessDialogComponent,{
+      minWidth:'250px',
+      minHeight:'200px',
+      maxHeight:'350px',
+      data:this.userName
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+     
+    });
   }
 
 }

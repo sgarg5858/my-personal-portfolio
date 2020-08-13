@@ -26,6 +26,7 @@ import { IndustryProjectsComponent } from './industry-projects/industry-projects
 import { PersonalProjectsComponent } from './personal-projects/personal-projects.component';
 import {BlogsComponent} from './blogs/blogs.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component'
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,9 +57,11 @@ import { SuccessDialogComponent } from './success-dialog/success-dialog.componen
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[SuccessDialogComponent]
 })
 export class AppModule { }
