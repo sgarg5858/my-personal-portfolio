@@ -1,10 +1,21 @@
-<div class="row">
-    <div style="display: flex;flex-direction: col;justify-content: center;text-align: center;align-content: center;" >
-        <div style="margin-top: 25vh;margin-left: 25vw;margin-right: 25vw;">
-            <span style="font-size: 20px;">
-                Project Page Coming Soon,
-                You can checkout my Github
-            </span>
+<div class="container-fluid" style="min-height: 90vh;background-color: #48b9e6;">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12 ">
+            <mat-card style="border-radius: 10px;display: flex;flex-direction: column;margin-top: 5vh;align-items: center;min-height: 80vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)" [style.overflow]="'auto'" [style.height.px]="'300'">
+                <mat-tab-group mat-align-tabs="center" style="width: 100%;">
+                    <mat-tab label="Projects">
+                        <app-industry-projects></app-industry-projects>
+                    </mat-tab>
+                    <mat-tab label="Personal Projects">
+                        <app-personal-projects></app-personal-projects>
+                    </mat-tab>
+                    <mat-tab label="Blogs">
+                        <app-blogs>
+
+                        </app-blogs>
+                    </mat-tab>
+                  </mat-tab-group>
+            </mat-card>
         </div>
     </div>
 </div>

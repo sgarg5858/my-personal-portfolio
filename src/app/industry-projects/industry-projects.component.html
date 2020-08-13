@@ -1,0 +1,46 @@
+<mat-card>
+    <div  >
+        <mat-card style="background-color: #48b9e6;width: 100%;margin-top: 10px;display: flex;flex-direction: column;" *ngIf="count==1">
+            <p style="font-size: 26px;font-weight: 400;color: #ffc966;">
+                Meridian
+            </p>
+            <p style="font-size: 16px;font-weight: 300;color: white;">
+                A platform where people can meet,collaborate and attend events. 
+            </p>
+            <p style="font-size: 16px;font-weight: 300;color: white;">
+                People can start their own meetings with required room settings,schedule meetings.
+            </p>
+            <p style="font-size: 16px;font-weight: 300;color: white;">
+                My major contribution is on the frontend part which includes implementing business logic and designing.
+            </p>
+            <div class="row" style="display: flex;flex-direction: row;">
+                <mat-card  style="margin-left: 5px;" class="skills" >Angular 10 </mat-card>
+                <mat-card style="margin-left: 5px;" class="skills">Angular Material </mat-card>
+                <mat-card style="margin-left: 5px;"class="skills">Node.js</mat-card>
+            </div>
+        </mat-card>
+        <mat-card style="background-color: #48b9e6;width: 100%;margin-top: 10px;display: flex;flex-direction: column;" *ngIf="count==2">
+            <p style="font-size: 26px;font-weight: 400;color: #ffc966;">
+                GNO
+            </p>
+            <p style="font-size: 16px;font-weight: 300;color: white;">
+                A platform where one can create and take surveys.
+            </p>
+            <p style="font-size: 16px;font-weight: 300;color: white;">
+                People can start their own surveys and add various type of question and see the responses.
+            </p>
+            <p style="font-size: 16px;font-weight: 300;color: white;">
+                My major contribution is on the frontend part which includes implementing business logic and designing.
+            </p>
+            <div class="row" style="display: flex;flex-direction: row;">
+                <mat-card   class="skills" >Angular 10 </mat-card>
+                <mat-card  class="skills">Angular Material </mat-card>
+                <mat-card class="skills">Node.js</mat-card>
+            </div>
+        </mat-card>
+       <div style="text-align: center;margin-top: 10px;">
+        <button mat-icon-button matTooltip="Previous" (click)="goBack()" style="outline: none;margin-right: 2px;"><mat-icon>arrow_left</mat-icon></button>
+        <button mat-icon-button matTooltip="Next" (click)="goNext()" style="outline: none;margin-left: 2px;"><mat-icon>arrow_right</mat-icon></button>
+       </div>
+</div>
+</mat-card>

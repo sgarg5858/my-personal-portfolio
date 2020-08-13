@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomNavbarComponent } from './components/custom-navbar/custom-navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { SkillsComponent } from './components/skills/skills.component';
-import { ProjectsBlogsComponent } from './components/projects-blogs/projects-blogs.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { BlogsComponent } from './components/blogs/blogs.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -24,17 +21,23 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
+import { IndustryProjectsComponent } from './industry-projects/industry-projects.component';
+import { PersonalProjectsComponent } from './personal-projects/personal-projects.component';
+import {BlogsComponent} from './blogs/blogs.component';
+import { SuccessDialogComponent } from './success-dialog/success-dialog.component'
 @NgModule({
   declarations: [
     AppComponent,
     CustomNavbarComponent,
     HomeComponent,
-    SkillsComponent,
-    ProjectsBlogsComponent,
     ProjectsComponent,
-    BlogsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    IndustryProjectsComponent,
+    PersonalProjectsComponent,
+    BlogsComponent,
+    SuccessDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
