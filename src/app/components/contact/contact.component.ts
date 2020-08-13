@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -8,12 +9,15 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
   contactForm:FormGroup;
   nameRequired=false;
   emailRequired=false;
   messageRequired=false;
-
+  isLoading=false;
+  isError=false;
+  isSent=false;
+  userName=null;
   ngOnInit(): void {
     this.contactForm=new FormGroup({
       name:new FormControl('',Validators.required),
@@ -23,6 +27,8 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(event){
+    this.isError=false;
+    this.isSent=false;
     event.preventDefault();
     this.nameRequired=false;
     this.emailRequired=false;
@@ -43,6 +49,17 @@ export class ContactComponent implements OnInit {
        return;
     }
     console.log(this.contactForm);
+    this.isLoading=true;
+    this.http.post('https://sanjaygarg-98.firebaseio.com/contacts.json',this.contactForm.value).subscribe((response)=>{
+      console.log(response);
+      this.userName=this.contactForm.value.name;
+      this.contactForm.reset();
+      this.isLoading=false;
+      this.isSent=true;
+    },(error)=>{
+      this.isLoading=false;
+      this.isError=true;
+    })
   }
 
 }
