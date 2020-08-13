@@ -1,17 +1,14 @@
-<div class="container-fluid" style="background-color:#48b9e6 ;">
+<!-- <div class="container-fluid" style="background-color:#48b9e6 ;">
     <div class="row" style="height:10vh;">
       <div class="col-2" style="margin-top: 1vh;">
        
         <ngx-avatar src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
-            <!-- [@NavLinksHoverAnimation]="hoverAnimationState" (mouseover)="changeStateofLink()" (mouseout)="changeStateofLink()"       -->
       </div>
       <div  class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-9 offset-sm-1 col-xs-9 offset-xs-1 col-9 showList">
         <ul class="vertical" [@navbarLinksAnimation]="navbarItemsAnimationState"  style="list-style: none;margin-top: 3vh;font-size: 25px;color:white;display: flex;flex-direction: row;justify-content: space-between;">
           <li >  
                <a   style="text-decoration: none;color: #ffc966;" routerLink="/home">Home</a></li>
           <li>  <a  style="text-decoration: none;color: #ffc966;" routerLink="/projects">Work</a></li>
-           <!-- <li> <a  style="text-decoration: none;color: #ffc966;" routerLink="/blogs">Blogs</a></li> -->
-           <!-- <li> <a   style="text-decoration: none;color: #ffc966;" routerLink="/about">About</a></li -->
             <li> <a   style="text-decoration: none;color: #ffc966;" routerLink="/contact">Contact</a></li>
         </ul>
       </div>
@@ -35,9 +32,7 @@
         <ul class="hoverColor" style="width: 100vw;text-decoration: none;list-style: none;" >
            <li style="display: block;margin-top: 5vh;"> <a  style="color: white;text-decoration: none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/home">Home</a></li>
            <li style="display: block;margin-top: 5vh;">  <a style="color:white;text-decoration: none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;"  (click)="closeButton()" routerLink="/projects">Work</a> </li>
-           <!-- <li style="display: block;margin-top: 5vh;">  <a  style="color: white;text-decoration: none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/blogs">Blogs</a> </li> -->
            <li style="display: block;margin-top: 5vh;">  <a  style=" color:white;text-decoration:  none;font-size: 25px;font-family: Arial, Helvetica, sans-serif;" (click)="closeButton()" routerLink="/contact">Contact</a> </li>
-            <!-- <a mat-list-item (click)="closeButton()" routerLink="/contact">Contact</a> -->
         </ul>
       </div>
         
@@ -48,4 +43,5 @@
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+<router-outlet></router-outlet>
