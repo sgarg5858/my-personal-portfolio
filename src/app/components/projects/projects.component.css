@@ -1,11 +1,14 @@
-.mat-card.scrollable-content {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+
+  /* .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background-color: #48b9e6 !important;
+    color: #48b9e6 !important;
+  }  */
+  .mat-badge-content {
+    background: #48b9e6;
+    color: white;
 }
-.mat-card-content {
-    overflow-y: auto;
-}
-.mat-card-title-group {
-    display: block;
-  }
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background: #48b9e6;
+    background-color: #48b9e6 !important;
+    color: #48b9e6 !important; 
+ } 
