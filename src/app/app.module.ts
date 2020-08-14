@@ -23,7 +23,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import { IndustryProjectsComponent } from './industry-projects/industry-projects.component';
-import { PersonalProjectsComponent } from './personal-projects/personal-projects.component';
 import {BlogsComponent} from './blogs/blogs.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component'
 import {MatDialogModule} from '@angular/material/dialog';
@@ -37,7 +36,6 @@ import {MatBadgeModule} from '@angular/material/badge';
     AboutComponent,
     ContactComponent,
     IndustryProjectsComponent,
-    PersonalProjectsComponent,
     BlogsComponent,
     SuccessDialogComponent
   ],

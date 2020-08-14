@@ -21,7 +21,7 @@ export class BlogsComponent implements OnInit {
   }
   goNext()
   {
-    if(this.count<2)
+    if(this.count<5)
     {
       this.count++;
     }
