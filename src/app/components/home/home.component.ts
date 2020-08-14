@@ -94,6 +94,7 @@ export class HomeComponent implements OnInit {
   skillCardState='hide';
   showMainCard=true;
   showSkillCard=false;
+  showContactCard=false;
   rotateEmoji="off";
   skillsState="off";
 
@@ -105,8 +106,6 @@ export class HomeComponent implements OnInit {
   }
   closeMainCard()
   {
-    // this.cardState="off";
-    // this.cardMovement="hide";
     setTimeout(()=>{
       this.showMainCard=false;
       this.showSkillCard=true;
@@ -126,9 +125,7 @@ export class HomeComponent implements OnInit {
       this.showSkillCard=false;
       this.showMainCard=true;
       this.skillsState='off';
-      // this.cardState="on";
      setTimeout(()=>{
-      // this.cardMovement="show";
       this.rotateEmoji='on';
      },1)
     },100);

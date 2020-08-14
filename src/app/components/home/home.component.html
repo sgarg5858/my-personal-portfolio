@@ -1,18 +1,36 @@
 <div class="container-fluid" style="background-color: #48b9e6;">
 <div class="row" >
-    <div style="margin-top: 10vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-10 offset-sm-1 col-xs-8 offset-xs-2 col-10 offset-1 "> 
+    <div style="margin-top: 5vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-10 offset-sm-1 col-xs-8 offset-xs-2 col-10 offset-1 "> 
         
         
         <mat-card   [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="text-align: center;" *ngIf="showMainCard">
-            <div style="display: flex;flex-direction: row-reverse;">
+            <div style="width: 100%;display: flex;flex-direction: row;justify-content: space-between;">
             <button 
-            matTooltip="Checkout Skills"
+            matTooltip="Skills"
+            mat-icon-button 
+            style="color:black;outline: none;background-color: transparent;border: none;"
+            (click)="closeMainCard()"
+            matTooltipPosition="left"
+            >
+                <mat-icon>code</mat-icon>
+            </button>
+            <button 
+            matTooltip="Projects"
             mat-icon-button 
             style="color:black;outline: none;background-color: transparent;border: none;"
             (click)="closeMainCard()"
             matTooltipPosition="right"
             >
-                <mat-icon>code</mat-icon>
+                <mat-icon>work</mat-icon>
+            </button>
+            <button 
+            matTooltip="Contact"
+            mat-icon-button 
+            style="color:black;outline: none;background-color: transparent;border: none;"
+            (click)="closeMainCard()"
+            matTooltipPosition="right"
+            >
+                <mat-icon>email</mat-icon>
             </button>
             </div>
             <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
