@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomNavbarComponent } from './components/custom-navbar/custom-navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
@@ -22,8 +20,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
-import { IndustryProjectsComponent } from './industry-projects/industry-projects.component';
-import {BlogsComponent} from './blogs/blogs.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component'
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -32,11 +28,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     AppComponent,
     CustomNavbarComponent,
     HomeComponent,
-    ProjectsComponent,
-    AboutComponent,
     ContactComponent,
-    IndustryProjectsComponent,
-    BlogsComponent,
     SuccessDialogComponent
   ],
   imports: [

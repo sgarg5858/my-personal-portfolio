@@ -1,133 +1,199 @@
 import { Component, OnInit } from '@angular/core';
-import { style, trigger, state, transition, animate, keyframes } from '@angular/animations';
-
+import {homeAnimations} from './home.animations';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { SuccessDialogComponent } from 'src/app/success-dialog/success-dialog.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  animations:[
-    trigger('BounceandShadow',[
-      state('off',style({
-        'opacity':0.5
-      })),
-      state('on',style({
-        'box-shadow':'0px 0px 50px rgba(0,0,0,0.17)',
-        'opacity':1
-      })),
-      transition('off <=> start',[
-        animate(1000,keyframes([
-          style({
-            'box-shadow':'0px 0px 5px rgba(0,0,0,0.17)',
-            'opacity':0.6,
-            'offset':0.2
-          }),
-          style({
-            'box-shadow':'0px 0px 10px rgba(0,0,0,0.17)',
-            'opacity':0.7,
-            'offset':0.4
-          }),
-          style({
-            'box-shadow':'0px 0px 20px rgba(0,0,0,0.17)',
-            'opacity':0.8,
-            'offset':0.6
-          }),
-          style({
-            'box-shadow':'0px 0px 30px rgba(0,0,0,0.17)',
-            'opacity':0.9,
-            'offset':0.8
-          }),
-          style({
-            'box-shadow':'0px 0px 50px rgba(0,0,0,0.17)',
-            'opacity':1.0,
-            'offset':1
-          })
-        ]))
-      ])
-
-    ]),
-    trigger('cardAnimation',[
-      state('hide',style({
-        'transform':'translateY(-1000px)'
-        
-      })),
-      state('show',style({
-        'transform':'translateY(0px) '
-      })),
-      transition('hide <=> show',animate(800))
-    ]),
-    trigger('skillCardAnimation',[
-      state('hide',style({
-        'transform':'translateY(1000px)'
-        
-      })),
-      state('show',style({
-        'transform':'translateY(0px) '
-      })),
-      transition('hide <=> show',animate(200))
-    ]),
-    trigger('rotateEmoji',[
-      state('off',style({
-        'transform':'rotate(-360deg)'
-        
-      })),
-      state('on',style({
-        'transform':'rotate(0) '
-      })),
-      transition('off  => on',animate(500))
-    ]),
-    trigger('skillsAnimation',[
-      state('off',style({
-        'opacity':0.3
-      })),
-      state('on',style({
-        'opacity':1
-      })),
-      transition('off => on',animate(5000))
-    ])
-  ]
+  animations:homeAnimations
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient,public dialog:MatDialog) { }
+  
   cardState="off";
   cardMovement="hide";
   skillCardState='hide';
+  projectCardState="hide";
+  contactCardState="hide";
   showMainCard=true;
   showSkillCard=false;
   showContactCard=false;
+  showProjectCard=false;
   rotateEmoji="off";
-  skillsState="off";
+// ************************************Project Variables***********
+  count=1;
+
+  // *****************Contact Form Things*****************
+  contactForm:FormGroup;
+  nameRequired=false;
+  emailRequired=false;
+  messageRequired=false;
+  isLoading=false;
+  isError=false;
+  isSent=false;
+  userName=null;
+  // **********************************************************
 
   ngOnInit(): void {
+    this.contactForm=new FormGroup({
+      name:new FormControl('',Validators.required),
+      email:new FormControl('',[Validators.required,Validators.email]),
+      message:new FormControl('',[Validators.required])
+    })
     setTimeout(()=>{
       this.cardState="on";
       this.cardMovement="show";
-    },1)
+    },1);
   }
-  closeMainCard()
+
+  closeMainCard(card:string)
   {
     setTimeout(()=>{
+      
+      //Main card hide
       this.showMainCard=false;
-      this.showSkillCard=true;
+
+      //show card skill,contact,project
+      if(card == 'skills')
+      {
+        this.showSkillCard=true;
+      }
+      else
+      if(card=='projects')
+      {
+        this.showProjectCard=true;
+      }else
+      if(card=='contact')
+      {
+        this.showContactCard=true;
+      }
+      
       setTimeout(()=>{
-        this.skillsState='on';
+        if(card == 'skills')
+      {
         this.skillCardState='show';
-        
+      }
+      else
+      if(card=='projects')
+      {
+        this.projectCardState='show';
+      }else
+      if(card=='contact')
+      {
+        this.contactCardState='show';
+      }
       },1)
     },10);
   }
-  openMainCard()
+
+  openMainCard(card:string)
   {
-    this.skillCardState='hide';
+    if(card == 'skills')
+    {
+      this.skillCardState='hide';
+    }
+    else
+    if(card=='projects')
+    {
+      this.projectCardState='hide';
+    }else
+    if(card=='contact')
+    {
+      this.contactCardState='hide';
+    }
+    
     this.rotateEmoji='off';
     
     setTimeout(()=>{
-      this.showSkillCard=false;
+      if(card == 'skills')
+      {
+        this.showSkillCard=false;
+      }
+      else
+      if(card=='projects')
+      {
+        this.showProjectCard=false;
+      }else
+      if(card=='contact')
+      {
+        this.showContactCard=false;
+      }
+      
       this.showMainCard=true;
-      this.skillsState='off';
      setTimeout(()=>{
       this.rotateEmoji='on';
      },1)
     },100);
   }
+
+  // **************************************Projects Things***************************
+  goBack()
+  {
+    if(this.count>1)
+    {
+      this.count--;
+    }
+  }
+  goNext()
+  {
+    if(this.count<4)
+    {
+      this.count++;
+    }
+  }
+
+  // ********************Contact Form**********************
+  onSubmit(event){
+    this.isError=false;
+    this.isSent=false;
+    event.preventDefault();
+    this.nameRequired=false;
+    this.emailRequired=false;
+    this.messageRequired=false;
+    if(this.contactForm.value.name=='')
+    {
+      this.nameRequired=true;
+       return;
+    }
+    if(this.contactForm.value.email=='')
+    {
+      this.emailRequired=true;
+       return;
+    }
+    if(this.contactForm.value.message=='')
+    {
+      this.messageRequired=true;
+       return;
+    }
+    console.log(this.contactForm);
+    this.isLoading=true;
+    this.http.post('https://sanjaygarg-98.firebaseio.com/contacts.json',this.contactForm.value).subscribe((response)=>{
+      console.log(response);
+      this.userName=this.contactForm.value.name;
+      this.contactForm.reset();
+      this.isLoading=false;
+      this.isSent=true;
+      this.openDialog();
+    },(error)=>{
+      this.isLoading=false;
+      this.isError=true;
+    })
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(SuccessDialogComponent,{
+      minWidth:'250px',
+      minHeight:'200px',
+      maxHeight:'350px',
+      data:this.userName
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+     
+    });
+  }
+
 }
