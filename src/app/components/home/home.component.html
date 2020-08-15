@@ -35,18 +35,24 @@
                 <mat-icon>email</mat-icon>
             </button>
             </div>
+            <!-- icons end -->
 
             <div style="display: flex;flex-direction: column;align-content: center;justify-content: center;align-items: center;">
-            <span [@rotateEmoji]="rotateEmoji" class="avatarHover"  style="margin-top: 2vh;">
-                <ngx-avatar  [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
-            </span>
-            <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
-                Sanjay Garg</p>
-            <p style="margin-top: 3vh;">
-                <ngx-typed-js [strings]="['Frontend Engineer','MEAN Stack Dev','DSA Programmer']" typeSpeed="9"  backSpeed= "9" backDelay="1500" startDelay="1500" loop="true">
+            
+                <span [@rotateEmoji]="rotateEmoji" class="avatarHover"  style="margin-top: 2vh;">
+                    <ngx-avatar  [size]="200" src="../../../assets/images/sanjay_emoji.jpg"></ngx-avatar>
+                 </span>
+
+                <p style="margin-top: 3vh;font-size: 40px;font-weight:300;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
+                Sanjay Garg
+                </p>
+
+                <p style="margin-top: 3vh;">
+                <ngx-typed-js [strings]="['Frontend Engineer','Angular Developer','DSA Programmer']" typeSpeed="9"  backSpeed= "9" backDelay="1500" startDelay="1500" loop="true">
                     <h1 class="typing" style="color: black;"></h1>
                 </ngx-typed-js> 
             </p>
+
             <ul style="margin-top: 3vh;display: flex;flex-direction: row;list-style: none;align-content: space-between;padding-left: 0;">
                 <li><a href="https://www.linkedin.com/in/sanjay-garg-26bab6153/"  target="_blank" class="fa fa-linkedin"></a></li>
                 <li style="margin-left: 2vw;"><a href="https://github.com/sgarg5858" target="_blank" class="fa fa-github"></a></li>
@@ -58,7 +64,7 @@
         </mat-card>
 
 
-        <mat-card class="lessBorder" [@skillCardAnimation]="skillCardState"  *ngIf="showSkillCard">
+        <mat-card class="lessBorder" [@skillCardAnimation]="skillCardState"  *ngIf="showSkillCard" style="box-shadow:0px 0px 50px rgba(0,0,0,0.17)">
             
             <div style="display: flex;flex-direction: row;align-content: space-between;">
             <span style="margin-top: 2vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
@@ -105,45 +111,32 @@
                         <mat-card class="skillCardList">
                            Java
                         </mat-card>  
-                    </div>  
-                    <div class="col-12">
-                        <mat-card class="skillCardList">
-                            Html5, CSS3
-                        </mat-card> 
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-12">
-                        <mat-card class="skillCardList">
-                            Bootstrap
-                        </mat-card> 
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <mat-card class="skillCardList">
-                           Data Structures and Algorithms
+                           Data Structures & Algorithms
                         </mat-card>  
                     </div>  
-                </div>
+                </div> 
                 <div class="row">
                     <div class="col-12">
                         <mat-card class="skillCardList">
-                           Angular Animations and Service Workers
+                            Html5, CSS3, Bootstrap
                         </mat-card>  
                     </div>  
-                </div>
-                
+                </div> 
          </div>
         </mat-card>
+    </div>
 
-
+    <div style="margin-bottom: 5vh;" class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 col-12">
         <div *ngIf="showProjectCard">
 
-            <mat-card [@projectsCardAnimation]="projectCardState">
+            <mat-card style="box-shadow:0px 0px 50px rgba(0,0,0,0.17);min-height: 60vh;" [@projectsCardAnimation]="projectCardState">
                 <div  >
-                    <div style="display: flex;flex-direction: row;align-content: space-between;">
+                    <div style="display: flex;flex-direction: row;align-content: space-between;margin-bottom: 20px;">
                         <span style="margin-top: 2vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
                             Projects</span>
                         <span style="width: 100%;text-align: end;">
@@ -158,82 +151,83 @@
                         </button>
                         </span>
                         </div>
-                    <mat-card style="background-color: #48b9e6;width: 100%;margin-top: 10px;display: flex;flex-direction: column;" *ngIf="count==1">
-                        <p style="font-size: 26px;font-weight: 400;color: #ffc966;">
+                    <mat-card style="background-color: #48b9e6;width: 100%;display: flex;flex-direction: column;" *ngIf="count==1">
+                        <p style="font-size: 30px;font-weight: 400;color: #ffc966;">
                             Meridian
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            A platform where people can meet,collaborate and attend events. 
+                            A platform where people can meet,collaborate and attend events.
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            People can start their own meetings with required room settings,schedule meetings.
+                            One can create their own meeting rooms with customized room settings like maxParticipants,requirePassword,listen mode only any many more
+                            and can schedule their meetings for future and put attendees with room settings as required.
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            My major contribution is on the frontend part which includes implementing business logic and designing.
+                            Roles and Responsibilities:
                         </p>
-                        <div class="row" style="display: flex;flex-direction: row;">
-                            <mat-card  style="margin-left: 5px;" class="skills" >Angular 10 </mat-card>
-                            <mat-card style="margin-left: 5px;" class="skills">Angular Material </mat-card>
-                            <mat-card style="margin-left: 5px;"class="skills">Node.js</mat-card>
-                        </div>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            1. Developed all the business logic for meetings like start meeting,join meeting,schedule meeting and room settings.
+                        </p>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            2. In daily to daily routine we are improving this application for providing better user experience and adding new features.
+                        </p>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            <span style="color: #ffc966;font-weight: 400;"> Technologies used : </span>  Angular , Angular Material , Node.js, Socket.io.
+                        </p>
                     </mat-card>
                     <mat-card style="background-color: #48b9e6;width: 100%;margin-top: 10px;display: flex;flex-direction: column;" *ngIf="count==2">
-                        <p style="font-size: 26px;font-weight: 400;color: #ffc966;">
+                        <p style="font-size: 30px;font-weight: 400;color: #ffc966;">
                             GNO
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            A platform where one can create and take surveys.
+                            A platform where people can create and take surveys.
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            People can start their own surveys and add various type of question and see the responses.
+                           One can create the survey and share the link with users.
+                           One can see all the live surveys and take survey if user has permission.
+                           Creator can see all the responses with different type of charts.
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            My major contribution is on the frontend part which includes implementing business logic and designing.
+                            Roles and Responsibilities:
                         </p>
-                        <div class="row" style="display: flex;flex-direction: row;">
-                            <mat-card   class="skills" >Angular 10 </mat-card>
-                            <mat-card  class="skills">Angular Material </mat-card>
-                            <mat-card class="skills">Node.js</mat-card>
-                        </div>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            1. Developed the business logic for showing all the surveys where users can search and sort surveys.
+                        </p>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            2. Developed my surveys for creators where one can manage their surveys like edit, delete or see responses.
+                        </p>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            <span style="color: #ffc966;font-weight: 400;"> Technologies used: </span>  Angular , Angular Material , Node.js.
+                        </p>
                     </mat-card>
                     <mat-card style="background-color: #48b9e6;width: 100%;margin-top: 10px;display: flex;flex-direction: column;" *ngIf="count==3">
-                        <p style="font-size: 26px;font-weight: 400;color: #ffc966;">
+                        <p style="font-size: 30px;font-weight: 400;color: #ffc966;">
                             Devconnect
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            A platform where people can meet,collaborate and attend events. 
+                            A platform where developers can connect.
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            People can start their own meetings with required room settings,schedule meetings.
+                            One can create their account,login and reset password.
+                            Developers can create their profile and can also see other developers and can search them by their name, role and location.
+                            
                         </p>
                         <p style="font-size: 16px;font-weight: 300;color: white;">
-                            My major contribution is on the frontend part which includes implementing business logic and designing.
+                            This is my personal project so i developed this entire application and you can check it out 
+                            <span>
+                                <a style="color: #ffc966;" href="https://devgram-e39dd.web.app/" target="_blank">here</a>
+                            </span>
+                            and source code 
+                            <span>
+                                <a style="color: #ffc966;" href="https://github.com/sgarg5858/Codegram" target="_blank">here</a>
+                            </span>
+                            .
                         </p>
-                        <div class="row" style="display: flex;flex-direction: row;">
-                            <mat-card  style="margin-left: 5px;" class="skills" >Angular 10 </mat-card>
-                            <mat-card style="margin-left: 5px;" class="skills">Angular Material </mat-card>
-                            <mat-card style="margin-left: 5px;"class="skills">Node.js</mat-card>
-                        </div>
+                        <p style="font-size: 16px;font-weight: 300;color: white;">
+                            <span style="color: #ffc966;font-weight: 400;"> Technologies used : </span>  Angular , Angular Material , Firebase.
+                        </p>
                     </mat-card>
-                    <mat-card style="background-color: #48b9e6;width: 100%;margin-top: 10px;display: flex;flex-direction: column;" *ngIf="count==4">
-                        <p style="font-size: 26px;font-weight: 400;color: #ffc966;">
-                        Covid19-tracker
-                        </p>
-                        <p style="font-size: 16px;font-weight: 300;color: white;">
-                            A platform where one can create and take surveys.
-                        </p>
-                        <p style="font-size: 16px;font-weight: 300;color: white;">
-                            People can start their own surveys and add various type of question and see the responses.
-                        </p>
-                        <p style="font-size: 16px;font-weight: 300;color: white;">
-                            My major contribution is on the frontend part which includes implementing business logic and designing.
-                        </p>
-                        <div class="row" style="display: flex;flex-direction: row;">
-                            <mat-card   class="skills" >Angular 10 </mat-card>
-                            <mat-card  class="skills">Angular Material </mat-card>
-                            <mat-card class="skills">Node.js</mat-card>
-                        </div>
-                    </mat-card>
+                   
                    <div style="text-align: center;margin-top: 10px;">
                     <button mat-icon-button matTooltip="Previous" (click)="goBack()" style="outline: none;margin-right: 2px;" ><mat-icon>arrow_left</mat-icon></button>
                    <span>{{count}}</span>
@@ -242,17 +236,12 @@
             </div>
             </mat-card>
         </div>
-         
-         
-         
-
-
     </div>
 </div>
 
 <div class="row" style="background-color: #48b9e6;" *ngIf="showContactCard">
     <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1">
-        <mat-card  [@contactCardAnimation]="contactCardState" style="display: flex;flex-direction: column;margin-top: 10vh;min-height: 40vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)">
+        <mat-card  [@contactCardAnimation]="contactCardState" style="display: flex;flex-direction: column;min-height: 50vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)">
             <div style="display: flex;flex-direction: row;align-content: space-between;">
                 <span style="margin-top: 1vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
                     Contact</span>

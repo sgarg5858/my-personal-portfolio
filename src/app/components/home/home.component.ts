@@ -140,7 +140,7 @@ export class HomeComponent implements OnInit {
   }
   goNext()
   {
-    if(this.count<4)
+    if(this.count<3)
     {
       this.count++;
     }
@@ -171,7 +171,7 @@ export class HomeComponent implements OnInit {
     }
     console.log(this.contactForm);
     this.isLoading=true;
-    this.http.post('https://sanjaygarg-98.firebaseio.com/contacts.json',this.contactForm.value).subscribe((response)=>{
+    this.http.post('https://sanjay-garg.firebaseio.com/contacts.json',this.contactForm.value).subscribe((response)=>{
       console.log(response);
       this.userName=this.contactForm.value.name;
       this.contactForm.reset();
