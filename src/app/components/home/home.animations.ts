@@ -52,10 +52,10 @@ export const homeAnimations=[
     ]),
     trigger('skillCardAnimation',[
       state('hide',style({
-        'transform':'translateX(-1000px)'
+        'transform':'translateY(1000px)'
       })),
       state('show',style({
-        'transform':'translateX(0px) '
+        'transform':'translateY(0px) '
       })),
       transition('hide <=> show',animate(200))
     ]),

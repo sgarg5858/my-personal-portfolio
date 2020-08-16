@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   showContactCard=false;
   showProjectCard=false;
   rotateEmoji="off";
+  showScroll=false;
 // ************************************Project Variables***********
   count=1;
 
@@ -48,6 +49,9 @@ export class HomeComponent implements OnInit {
       this.cardState="on";
       this.cardMovement="show";
     },1);
+    setTimeout(()=>{
+      this.showScroll=true;
+    },1000)
   }
 
   closeMainCard(card:string)

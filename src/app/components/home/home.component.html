@@ -1,22 +1,22 @@
-<div class="container-fluid" style="background-color: #48b9e6">
+<div class="container-fluid"  style="background-color: #48b9e6;">
 <div class="row">
-    <div style="margin-top: 10vh;height:95vh" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-8 offset-xs-2 col-10 offset-1 " *ngIf="showMainCard || showSkillCard"> 
+    <div style="height:100vh;margin-top: 20px;display: flex;flex-direction: column;align-content: center;justify-content: center;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-8 offset-xs-2 col-10 offset-1 " *ngIf="showMainCard || showSkillCard"> 
         
         
         <mat-card   [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="text-align: center;" *ngIf="showMainCard">
             
             <!-- Three top icons -->
-            <div style="width: 100%;display: flex;flex-direction: row;justify-content: space-between;">
+            <div style="width: 100%;display: flex;flex-direction: row-reverse;justify-content: space-between;">
             <button 
             matTooltip="Skills"
             mat-icon-button 
-            style="color:black;outline: none;background-color: transparent;border: none;"
+            style="outline: none;background-color: transparent;border: none;"
             (click)="closeMainCard('skills')"
             matTooltipPosition="left"
             >
-                <mat-icon>code</mat-icon>
+                <mat-icon style="color: #48b9e6;">menu</mat-icon>
             </button>
-            <button 
+            <!-- <button 
             matTooltip="Projects"
             mat-icon-button 
             style="color:black;outline: none;background-color: transparent;border: none;"
@@ -24,8 +24,8 @@
             matTooltipPosition="right"
             >
                 <mat-icon>work</mat-icon>
-            </button>
-            <button 
+            </button> -->
+            <!-- <button 
             matTooltip="Contact"
             mat-icon-button 
             style="color:black;outline: none;background-color: transparent;border: none;"
@@ -33,7 +33,7 @@
             matTooltipPosition="right"
             >
                 <mat-icon>email</mat-icon>
-            </button>
+            </button> -->
             </div>
             <!-- icons end -->
 
@@ -129,12 +129,20 @@
                 </div> 
          </div>
         </mat-card>
+        
+        <div style="margin-top: 5vh;align-items: center;width: 100%;" *ngIf="showScroll">
+            <div class="container">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+              </div>
+        </div>
     </div>
 
-    <div style="margin-bottom: 5vh;margin-top: 10vh;height: 95vh;" class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 col-12" *ngIf="showProjectCard">
+    <div style="margin-bottom: 5vh;margin-top: 10vh;min-height: 70vh;" class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 col-12" *ngIf="showProjectCard">
         <div >
 
-            <mat-card style="box-shadow:0px 0px 50px rgba(0,0,0,0.17);min-height: 60vh;" [@projectsCardAnimation]="projectCardState">
+            <mat-card style="box-shadow:0px 0px 50px rgba(0,0,0,0.17);min-height: 70vh;" [@projectsCardAnimation]="projectCardState">
                 <div  >
                     <div style="display: flex;flex-direction: row;align-content: space-between;margin-bottom: 20px;">
                         <span style="margin-top: 2vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
