@@ -23,13 +23,17 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component'
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ProjectsComponent } from './projects/projects.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
     CustomNavbarComponent,
     HomeComponent,
     ContactComponent,
-    SuccessDialogComponent
+    SuccessDialogComponent,
+    ProjectsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

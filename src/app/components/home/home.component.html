@@ -1,6 +1,6 @@
 <div class="container-fluid" style="background-color: #48b9e6;min-height: 100vh;">
 <div class="row">
-    <div style="margin-top: 10vh;margin-bottom: 5vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-8 offset-xs-2 col-10 offset-1 "> 
+    <div style="margin-top: 10vh;margin-bottom: 5vh;" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-8 offset-xs-2 col-10 offset-1 " *ngIf="showMainCard || showSkillCard"> 
         
         
         <mat-card   [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="text-align: center;" *ngIf="showMainCard">
@@ -131,8 +131,8 @@
         </mat-card>
     </div>
 
-    <div style="margin-bottom: 5vh;" class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 col-12">
-        <div *ngIf="showProjectCard">
+    <div style="margin-bottom: 5vh;margin-top: 10vh;" class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 col-12" *ngIf="showProjectCard">
+        <div >
 
             <mat-card style="box-shadow:0px 0px 50px rgba(0,0,0,0.17);min-height: 60vh;" [@projectsCardAnimation]="projectCardState">
                 <div  >
@@ -237,10 +237,7 @@
             </mat-card>
         </div>
     </div>
-</div>
-
-<div class="row" style="background-color: #48b9e6;" *ngIf="showContactCard">
-    <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1">
+    <div style="margin-bottom: 5vh;margin-top: 10vh;"  class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1" *ngIf="showContactCard">
         <mat-card  [@contactCardAnimation]="contactCardState" style="display: flex;flex-direction: column;min-height: 50vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)">
             <div style="display: flex;flex-direction: row;align-content: space-between;">
                 <span style="margin-top: 1vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
@@ -306,4 +303,76 @@
     </div>
 </div>
 
+<!-- <div class="row" style="background-color: #48b9e6;margin-top: 0vh" *ngIf="showContactCard">
+    <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-10 offset-xs-1">
+        <mat-card  [@contactCardAnimation]="contactCardState" style="display: flex;flex-direction: column;min-height: 50vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)">
+            <div style="display: flex;flex-direction: row;align-content: space-between;">
+                <span style="margin-top: 1vh;font-size: 40px;font-weight:100;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
+                    Contact</span>
+                <span style="width: 100%;text-align: end;">
+                    <button 
+                mat-icon-button 
+                style="color:black;outline: none;background-color: transparent;border: none;"
+                (click)="openMainCard('contact')"
+                matTooltip="Go Back"
+                matTooltipPosition="right"
+                >
+                <mat-icon style="height: 25px;">close</mat-icon>
+                </button>
+                </span>
+                </div>
+            <form [formGroup]="contactForm" style="display: flex;flex-direction: column;align-items: center;margin-top: 2vh;">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Your Name" formControlName="name">
+                    <mat-error *ngIf="contactForm.controls.name.errors && contactForm.controls.name.errors.required">
+                            Your name is required.
+                    </mat-error>
+
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Your Email" formControlName="email">
+                    <mat-error *ngIf=" contactForm.controls.email.errors &&contactForm.controls.email.errors.required">
+                        Your email is required.
+                </mat-error>
+                <mat-error *ngIf="contactForm.controls.email.errors && contactForm.controls.email.errors.email">
+                    Please enter valid email.              
+                 </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <textarea  matInput type="text" placeholder="Your Message" formControlName="message"></textarea>
+                    
+                    <mat-error *ngIf="contactForm.controls.message.errors && contactForm.controls.message.errors.required">
+                        Your message is required.
+                </mat-error>
+
+                </mat-form-field>
+                <p style="color: red;font-size: 14px;" *ngIf="nameRequired || emailRequired || messageRequired">
+                    Please enter required details.
+                </p>
+                <button 
+                mat-raised-button 
+                [class.spinner]="isLoading"
+                [disabled]="isLoading"
+                style="background-color: #48b9e6; color:white;width: 100px;height: 200x;" 
+                type="button" 
+                (click)="onSubmit($event)" 
+                >
+                    Send
+                </button>
+            </form>
+            <div *ngIf="isError" style="font-size: 16px;font-weight: 400;margin-top: 10px;">
+                Something went wrong.Please try later.
+            </div>
+            
+            
+        </mat-card>
+    </div>
+   
+</div> -->
+<div class="row">
+    <app-projects></app-projects>
+</div>
+<app-contact></app-contact>
+<app-about></app-about>
 </div>
