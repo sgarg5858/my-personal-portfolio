@@ -1,5 +1,5 @@
-<div class="container-fluid"  style="background-color: #48b9e6;">
-<div class="row" style="height: 100vh;">
+<div class="container-fluid" style="min-height: 100vh;" style="background-color: #48b9e6;">
+<div class="row" style="min-height: 100vh;">
     
     <div 
     style="margin-top: 20px;display: flex;flex-direction: column;align-content: center;justify-content: center;" 
@@ -11,6 +11,7 @@
         <mat-card   [@cardAnimation]="cardMovement" [@BounceandShadow]="cardState" style="text-align: center;" *ngIf="showMainCard">
             
             <!-- Three top icons -->
+
             <div style="width: 100%;display: flex;flex-direction: row-reverse;justify-content: space-between;">
             <button 
             matTooltip="Skills"
@@ -28,7 +29,7 @@
             (click)="closeMainCard('projects')"
             matTooltipPosition="right"
             >
-                <mat-icon>work</mat-icon>
+                <mat-icon style="color: #0e76a8;" >work</mat-icon>
             </button>
             <button 
             matTooltip="Contact"
@@ -37,7 +38,7 @@
             (click)="closeMainCard('contact')"
             matTooltipPosition="right"
             >
-                <mat-icon>email</mat-icon>
+                <mat-icon style="color: #7ac142;">email</mat-icon>
             </button>
             </div>
             <!-- icons end -->
@@ -142,13 +143,22 @@
     class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12 offset-xs-0 col-12"   
     *ngIf="showProjectCard">
         <div >
-    
-            <mat-card style="box-shadow:0px 0px 50px rgba(0,0,0,0.17);min-height: 85vh;" [@projectsCardAnimation]="projectCardState" >
+            <mat-card style="box-shadow:0px 0px 50px rgba(0,0,0,0.17);min-height: 75vh;" [@projectsCardAnimation]="projectCardState" >
                 <div  >
+                    
                     <div style="display: flex;flex-direction: row;align-content: space-between;margin-bottom: 20px;">
                         <span style="margin-top: 2vh;font-size: 35px;font-weight:400;font-family:sans-serif;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);">
                             Projects</span>
                         <span style="width: 100%;text-align: end;">
+                            <button 
+                            matTooltip="Contact"
+                            mat-icon-button 
+                            style="color:black;outline: none;background-color: transparent;border: none;"
+                            (click)="openMainCard('projects')"
+                            matTooltipPosition="right"
+                            >
+                                <mat-icon>close</mat-icon>
+                            </button>
                         </span>
                         </div>
                     <mat-card style="background-color: #48b9e6;width: 100%;display: flex;flex-direction: column;min-height: 50vh;" *ngIf="count==1">
@@ -246,9 +256,18 @@
         <mat-card 
         style="display: flex;flex-direction: column;justify-content: center;align-items: center;min-height: 50vh;box-shadow:0px 0px 50px rgba(0,0,0,0.17)"
         [@contactCardAnimation]="contactCardState"
-        
         >
-            
+        <div style="width: 100%;text-align: end;">
+            <button 
+            matTooltip="Contact"
+            mat-icon-button 
+            style="color:black;outline: none;background-color: transparent;border: none;"
+            (click)="openMainCard('contact')"
+            matTooltipPosition="right"
+            >
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
         
         <p style="font-size: 26px;font-weight: 500;margin-top: 1vh;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);" *ngIf="aboutPanelClosed"> Get In Touch</p>
             <form [formGroup]="contactForm" style="display: flex;flex-direction: column;align-items: center;" *ngIf="aboutPanelClosed">

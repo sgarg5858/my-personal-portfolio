@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { SuccessDialogComponent } from 'src/app/success-dialog/success-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomSnackbarComponent } from 'src/app/custom-snackbar/custom-snackbar.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +14,7 @@ import { SuccessDialogComponent } from 'src/app/success-dialog/success-dialog.co
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http:HttpClient,public dialog:MatDialog) { }
+  constructor(private http:HttpClient,public dialog:MatDialog,public snackbar:MatSnackBar) { }
   
   cardState="off";
   cardMovement="hide";
@@ -42,6 +44,15 @@ export class HomeComponent implements OnInit {
   // **********************************************************
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.snackbar.openFromComponent(CustomSnackbarComponent,{
+        data:"Use icons above emoji to know about me.",
+        horizontalPosition:"right",
+        verticalPosition:"top",
+        duration:10000,
+        panelClass: ['white-snackbar']
+      })
+    },2000)
     this.contactForm=new FormGroup({
       name:new FormControl('',Validators.required),
       email:new FormControl('',[Validators.required,Validators.email]),
@@ -126,6 +137,8 @@ export class HomeComponent implements OnInit {
       }else
       if(card=='contact')
       {
+        this.panelOpenState=false;
+        this.aboutPanelClosed=true;
         this.showContactCard=false;
       }
       

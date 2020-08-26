@@ -26,6 +26,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CustomSnackbarComponent } from './custom-snackbar/custom-snackbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ContactComponent,
     SuccessDialogComponent,
     ProjectsComponent,
-    AboutComponent
+    AboutComponent,
+    CustomSnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatTabsModule,
     MatDialogModule,
     MatBadgeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
