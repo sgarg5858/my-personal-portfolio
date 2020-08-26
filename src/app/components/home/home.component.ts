@@ -37,6 +37,8 @@ export class HomeComponent implements OnInit {
   isError=false;
   isSent=false;
   userName=null;
+  panelOpenState=false;
+  aboutPanelClosed=true;
   // **********************************************************
 
   ngOnInit(): void {
@@ -199,5 +201,16 @@ export class HomeComponent implements OnInit {
      
     });
   }
-
+  openAboutComponent()
+  {
+    this.panelOpenState=true;
+    this.aboutPanelClosed=false;
+  }
+  closeAboutComponent()
+  {
+    this.panelOpenState=false;
+    setTimeout(()=>{
+      this.aboutPanelClosed=true;
+    },200);
+  }
 }
