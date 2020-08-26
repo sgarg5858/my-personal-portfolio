@@ -250,7 +250,7 @@
         >
             
         
-        <p style="font-size: 26px;font-weight: 500;margin-top: 1vh;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);" *ngIf="!panelOpenState"> Get In Touch</p>
+        <p style="font-size: 26px;font-weight: 500;margin-top: 1vh;text-shadow: 1px 6px 4px rgba(0,0,0,0.1), 0px -5px 12px rgba(255,255,255,0.3);" *ngIf="aboutPanelClosed"> Get In Touch</p>
             <form [formGroup]="contactForm" style="display: flex;flex-direction: column;align-items: center;" *ngIf="aboutPanelClosed">
                 <mat-form-field>
                     <input matInput type="text" placeholder="Your Name" formControlName="name">
